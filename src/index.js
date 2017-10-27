@@ -4,11 +4,11 @@ import express from 'express';
 import expressGraphQL from 'express-graphql';
 import schema from './schema/Schema';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(
-  '/graphql',
+  '/',
   expressGraphQL(req => ({
     schema,
     graphiql: true,

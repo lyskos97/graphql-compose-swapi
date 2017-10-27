@@ -1,14 +1,14 @@
 {
   "name": "graphql-compose-swapi",
   "version": "0.0.1",
-  "description": "Example app demonstrating capabilities of `graphql-compose-rest`",
+  "description":
+    "Example app demonstrating capabilities of `graphql-compose-rest`",
   "main": "index.js",
-  "keywords": [
-    "graphql",
-    "compose",
-    "rest",
-    "demo"
-  ],
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=3.3"
+  },
+  "keywords": ["graphql", "compose", "rest", "demo"],
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "express": "^4.16.2",
@@ -41,7 +41,7 @@
     "semantic-release": "^8.2.0"
   },
   "scripts": {
-    "start": "nodemon ./src/index.js --exec babel-node"
+    "start": "babel-node ./src/index.js"
   },
   "license": "MIT"
 }
