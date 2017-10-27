@@ -4,7 +4,7 @@ import express from 'express';
 import expressGraphQL from 'express-graphql';
 import schema from './schema/Schema';
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(
@@ -16,7 +16,7 @@ app.use(
   }))
 );
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}`);
-  console.log(`Visit http://localhost:${PORT}/graphql`);
+app.listen(port, () => {
+  console.log(`App running on port ${port}`);
+  console.log(`Visit http://localhost:${port}/graphql`);
 });
