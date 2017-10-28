@@ -36,14 +36,14 @@ createFindListByPageNumberResolver(StarshipTC, 'starships');
 
 createFindByUrlListResolver(StarshipTC);
 
-StarshipTC.addRelation('pilotObjs', {
+StarshipTC.addRelation('pilots', {
   resolver: () => PersonTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.pilots,
   },
 });
 
-StarshipTC.addRelation('filmObjs', {
+StarshipTC.addRelation('films', {
   resolver: () => FilmTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.films,

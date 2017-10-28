@@ -36,21 +36,21 @@ createFindListByPageNumberResolver(SpeciesTC, 'species');
 
 createFindByUrlListResolver(SpeciesTC);
 
-SpeciesTC.addRelation('homeworldObj', {
+SpeciesTC.addRelation('homeworld', {
   resolver: () => PlanetTC.getResolver('findByUrl'),
   prepareArgs: {
     urls: source => source.homeworld,
   },
 });
 
-SpeciesTC.addRelation('peopleObjs', {
+SpeciesTC.addRelation('people', {
   resolver: () => PersonTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.people,
   },
 });
 
-SpeciesTC.addRelation('filmObjs', {
+SpeciesTC.addRelation('films', {
   resolver: () => FilmTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.films,

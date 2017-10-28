@@ -81,21 +81,21 @@ createFindListByPageNumberResolver(FilmTC, 'films');
 
 createFindByUrlListResolver(FilmTC);
 
-FilmTC.addRelation('characterObjs', {
+FilmTC.addRelation('characters', {
   resolver: () => PersonTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.characters,
   },
 });
 
-FilmTC.addRelation('speciesObjs', {
+FilmTC.addRelation('species', {
   resolver: () => SpeciesTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.species,
   },
 });
 
-FilmTC.addRelation('vehicleObjs', {
+FilmTC.addRelation('vehicles', {
   resolver: () => VehicleTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.vehicles,
@@ -109,7 +109,7 @@ FilmTC.addRelation('starshipObjs', {
   },
 });
 
-FilmTC.addRelation('planetObjs', {
+FilmTC.addRelation('planets', {
   resolver: () => PlanetTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.planets,

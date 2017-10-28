@@ -36,14 +36,14 @@ createFindListByPageNumberResolver(VehicleTC, 'vehicles');
 
 createFindByUrlListResolver(VehicleTC);
 
-VehicleTC.addRelation('pilotObjs', {
+VehicleTC.addRelation('pilots', {
   resolver: () => PersonTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.pilots,
   },
 });
 
-VehicleTC.addRelation('filmObjs', {
+VehicleTC.addRelation('films', {
   resolver: () => FilmTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.films,

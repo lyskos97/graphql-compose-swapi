@@ -4,7 +4,6 @@
   "description":
     "Example app demonstrating capabilities of `graphql-compose-rest`",
   "main": "index.js",
-  "repository": {},
   "engines": {
     "node": "8.5.0",
     "yarn": "1.2.1"
@@ -42,7 +41,8 @@
     "semantic-release": "^8.2.0"
   },
   "scripts": {
-    "start": "babel-node ./src/index.js"
+    "start": "babel-node ./src/index.js",
+    "start:watch": "nodemon ./src/index.js --exec babel-node"
   },
   "license": "MIT"
 }

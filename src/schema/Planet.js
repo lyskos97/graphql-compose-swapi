@@ -42,20 +42,21 @@ createFindByUrlListResolver(PlanetTC);
 PlanetTC.addResolver({
   name: 'findByUrl',
   type: PlanetTC,
-  args: {
-    url: 'String!',
+  resolve: async rp => {
+    const res = await fetch(rp.args.url);
+    const data = await res.json();
+    return data;
   },
-  resolve: rp => fetch(rp.args.url).then(r => r.json()),
 });
 
-PlanetTC.addRelation('residentObjs', {
+PlanetTC.addRelation('residents', {
   resolver: () => PersonTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.residents,
   },
 });
 
-PlanetTC.addRelation('filmObjs', {
+PlanetTC.addRelation('films', {
   resolver: () => FilmTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.films,

@@ -47,35 +47,35 @@ createFindListByPageNumberResolver(PersonTC, 'people');
 
 createFindByUrlListResolver(PersonTC);
 
-PersonTC.addRelation('filmObjs', {
+PersonTC.addRelation('films', {
   resolver: () => FilmTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.films,
   },
 });
 
-PersonTC.addRelation('homeworldObj', {
+PersonTC.addRelation('homeworld', {
   resolver: () => PlanetTC.getResolver('findByUrl'),
   prepareArgs: {
-    urls: source => source.homeworld,
+    url: source => source.homeworld,
   },
 });
 
-PersonTC.addRelation('speciesObjs', {
+PersonTC.addRelation('species', {
   resolver: () => SpeciesTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.species,
   },
 });
 
-PersonTC.addRelation('vehicleObjs', {
+PersonTC.addRelation('vehicles', {
   resolver: () => VehicleTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.vehicles,
   },
 });
 
-PersonTC.addRelation('starshipObjs', {
+PersonTC.addRelation('starships', {
   resolver: () => StarshipTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.starships,

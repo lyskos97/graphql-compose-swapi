@@ -37,9 +37,6 @@ export function createFindByUrlListResolver(tc: TypeComposer): void {
   tc.addResolver({
     name: 'findByUrlList',
     type: [tc],
-    args: {
-      urls: '[String]!',
-    },
     resolve: rp => {
       return rp.args.urls.map(async url => {
         const res = await fetch(url);
