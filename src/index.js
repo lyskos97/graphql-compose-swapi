@@ -5,7 +5,6 @@ import expressGraphQL from 'express-graphql';
 import fetch from 'node-fetch';
 import Dataloader from 'dataloader';
 import schema from './schema/Schema';
-// import { loadData, loadBulk } from './utils';
 
 const port = process.env.PORT || 3000;
 const app = express();
