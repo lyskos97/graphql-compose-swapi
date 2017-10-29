@@ -1,28 +1,32 @@
 {
   "name": "graphql-compose-swapi",
   "version": "0.0.1",
-  "description":
-    "Example app demonstrating capabilities of `graphql-compose-rest`",
+  "description": "Example app demonstrating capabilities of `graphql-compose-rest`",
   "main": "index.js",
   "engines": {
     "node": "8.5.0",
     "yarn": "1.2.1"
   },
-  "keywords": ["graphql", "compose", "rest", "demo"],
+  "keywords": [
+    "graphql",
+    "compose",
+    "rest",
+    "demo"
+  ],
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "dataloader": "^1.3.0",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
     "graphql-compose": "^2.9.2",
     "graphql-compose-rest": "^1.0.0",
-    "node-fetch": "^1.7.3",
-    "nodemon": "^1.12.1"
+    "node-fetch": "^1.7.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -36,6 +40,7 @@
     "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.57.3",
     "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2",
     "semantic-release": "^8.2.0"
