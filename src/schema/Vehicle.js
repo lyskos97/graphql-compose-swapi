@@ -6,10 +6,10 @@ import {
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { PersonTC } from './Person';
-import { FilmTC } from './Film';
+import PersonTC from './Person';
+import FilmTC from './Film';
 
-const responseFromRestApi = {
+const restApiResponse = {
   name: 'XJ-6 airspeeder',
   model: 'XJ-6 airspeeder',
   manufacturer: 'Narglatch AirTech prefabricated kit',
@@ -28,7 +28,9 @@ const responseFromRestApi = {
   url: 'https://swapi.co/api/vehicles/46/',
 };
 
-export const VehicleTC = composeWithRest('Vehicle', responseFromRestApi);
+const VehicleTC = composeWithRest('Vehicle', restApiResponse);
+
+export default VehicleTC;
 
 createFindByIdResolver(VehicleTC, 'vehicles');
 

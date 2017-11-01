@@ -6,13 +6,13 @@ import {
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { PersonTC } from './Person';
-import { PlanetTC } from './Planet';
-import { VehicleTC } from './Vehicle';
-import { SpeciesTC } from './Species';
-import { StarshipTC } from './Starship';
+import PersonTC from './Person';
+import PlanetTC from './Planet';
+import VehicleTC from './Vehicle';
+import SpeciesTC from './Species';
+import StarshipTC from './Starship';
 
-const responseFromRestApi = {
+const restApiResponse = {
   title: 'A New Hope',
   episode_id: 4,
   opening_crawl:
@@ -73,7 +73,9 @@ const responseFromRestApi = {
   url: 'https://swapi.co/api/films/1/',
 };
 
-export const FilmTC = composeWithRest('Film', responseFromRestApi);
+const FilmTC = composeWithRest('Film', restApiResponse);
+
+export default FilmTC;
 
 createFindByIdResolver(FilmTC, 'films');
 
@@ -102,7 +104,7 @@ FilmTC.addRelation('vehicles', {
   },
 });
 
-FilmTC.addRelation('starshipObjs', {
+FilmTC.addRelation('starships', {
   resolver: () => StarshipTC.getResolver('findByUrlList'),
   prepareArgs: {
     urls: source => source.starships,

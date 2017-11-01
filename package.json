@@ -1,18 +1,14 @@
 {
   "name": "graphql-compose-swapi",
   "version": "0.0.1",
-  "description": "Example app demonstrating capabilities of `graphql-compose-rest`",
+  "description":
+    "Example app demonstrating capabilities of `graphql-compose-rest`",
   "main": "index.js",
   "engines": {
     "node": "8.5.0",
     "yarn": "1.2.1"
   },
-  "keywords": [
-    "graphql",
-    "compose",
-    "rest",
-    "demo"
-  ],
+  "keywords": ["graphql", "compose", "rest", "demo", "swapi"],
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",

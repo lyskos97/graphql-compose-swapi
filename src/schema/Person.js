@@ -1,18 +1,19 @@
 /* @flow */
 
 import composeWithRest from 'graphql-compose-rest';
+import fetch from 'node-fetch';
 import {
   createFindByIdResolver,
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { FilmTC } from './Film';
-import { PlanetTC } from './Planet';
-import { VehicleTC } from './Vehicle';
-import { SpeciesTC } from './Species';
-import { StarshipTC } from './Starship';
+import FilmTC from './Film';
+import PlanetTC from './Planet';
+import VehicleTC from './Vehicle';
+import SpeciesTC from './Species';
+import StarshipTC from './Starship';
 
-const responseFromRestApi = {
+const restApiResponse = {
   name: 'Anakin Skywalker',
   height: '188',
   mass: '84',
@@ -39,7 +40,7 @@ const responseFromRestApi = {
   url: 'https://swapi.co/api/people/11/',
 };
 
-export const PersonTC = composeWithRest('Person', responseFromRestApi);
+const PersonTC = composeWithRest('Person', restApiResponse);
 
 createFindByIdResolver(PersonTC, 'people');
 
@@ -81,3 +82,5 @@ PersonTC.addRelation('starships', {
     urls: source => source.starships,
   },
 });
+
+export default PersonTC;

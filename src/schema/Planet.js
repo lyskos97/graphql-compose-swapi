@@ -7,10 +7,10 @@ import {
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { PersonTC } from './Person';
-import { FilmTC } from './Film';
+import PersonTC from './Person';
+import FilmTC from './Film';
 
-const responseFromRestApi = {
+const restApiResponse = {
   name: 'Alderaan',
   rotation_period: '24',
   orbital_period: '364',
@@ -31,7 +31,9 @@ const responseFromRestApi = {
   url: 'https://swapi.co/api/planets/2/',
 };
 
-export const PlanetTC = composeWithRest('Planet', responseFromRestApi);
+const PlanetTC = composeWithRest('Planet', restApiResponse);
+
+export default PlanetTC;
 
 createFindByIdResolver(PlanetTC, 'planets');
 

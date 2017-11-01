@@ -6,11 +6,11 @@ import {
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { PersonTC } from './Person';
-import { FilmTC } from './Film';
-import { PlanetTC } from './Planet';
+import PersonTC from './Person';
+import FilmTC from './Film';
+import PlanetTC from './Planet';
 
-const responseFromRestApi = {
+const restApiResponse = {
   name: 'Toong',
   classification: 'unknown',
   designation: 'sentient',
@@ -28,7 +28,9 @@ const responseFromRestApi = {
   url: 'https://swapi.co/api/species/19/',
 };
 
-export const SpeciesTC = composeWithRest('Species', responseFromRestApi);
+const SpeciesTC = composeWithRest('Species', restApiResponse);
+
+export default SpeciesTC;
 
 createFindByIdResolver(SpeciesTC, 'species');
 

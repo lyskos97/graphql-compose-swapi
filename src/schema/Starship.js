@@ -6,29 +6,43 @@ import {
   createFindListByPageNumberResolver,
   createFindByUrlListResolver,
 } from '../utils';
-import { PersonTC } from './Person';
-import { FilmTC } from './Film';
+import PersonTC from './Person';
+import FilmTC from './Film';
 
-const responseFromRestApi = {
-  name: 'XJ-6 airspeeder',
-  model: 'XJ-6 airspeeder',
-  manufacturer: 'Narglatch AirTech prefabricated kit',
-  cost_in_credits: 'unknown',
-  length: '6.23',
-  max_atmosphering_speed: '720',
-  crew: '1',
-  passengers: '1',
-  cargo_capacity: 'unknown',
-  consumables: 'unknown',
-  vehicle_class: 'airspeeder',
-  pilots: ['https://swapi.co/api/people/11/'],
-  films: ['https://swapi.co/api/films/5/'],
-  created: '2014-12-20T17:19:19.991000Z',
-  edited: '2014-12-22T18:21:16.150194Z',
-  url: 'https://swapi.co/api/vehicles/46/',
+const restApiResponse = {
+  name: 'Millennium Falcon',
+  model: 'YT-1300 light freighter',
+  manufacturer: 'Corellian Engineering Corporation',
+  cost_in_credits: '100000',
+  length: '34.37',
+  max_atmosphering_speed: '1050',
+  crew: '4',
+  passengers: '6',
+  cargo_capacity: '100000',
+  consumables: '2 months',
+  hyperdrive_rating: '0.5',
+  MGLT: '75',
+  starship_class: 'Light freighter',
+  pilots: [
+    'https://swapi.co/api/people/13/',
+    'https://swapi.co/api/people/14/',
+    'https://swapi.co/api/people/25/',
+    'https://swapi.co/api/people/31/',
+  ],
+  films: [
+    'https://swapi.co/api/films/2/',
+    'https://swapi.co/api/films/7/',
+    'https://swapi.co/api/films/3/',
+    'https://swapi.co/api/films/1/',
+  ],
+  created: '2014-12-10T16:59:45.094000Z',
+  edited: '2014-12-22T17:35:44.464156Z',
+  url: 'https://swapi.co/api/starships/10/',
 };
 
-export const StarshipTC = composeWithRest('Starships', responseFromRestApi);
+const StarshipTC = composeWithRest('Starships', restApiResponse);
+
+export default StarshipTC;
 
 createFindByIdResolver(StarshipTC, 'starships');
 
