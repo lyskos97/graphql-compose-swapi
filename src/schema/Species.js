@@ -1,6 +1,6 @@
 /* @flow */
 
-import composeWithRest from 'graphql-compose-rest';
+import composeWithJson from 'graphql-compose-json';
 import {
   createFindByIdResolver,
   createFindListByPageNumberResolver,
@@ -28,7 +28,7 @@ const restApiResponse = {
   url: 'https://swapi.co/api/species/19/',
 };
 
-const SpeciesTC = composeWithRest('Species', restApiResponse);
+const SpeciesTC = composeWithJson('Species', restApiResponse);
 
 export default SpeciesTC;
 

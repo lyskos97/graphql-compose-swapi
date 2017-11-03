@@ -1,7 +1,6 @@
 /* @flow */
 
-import composeWithRest from 'graphql-compose-rest';
-import fetch from 'node-fetch';
+import composeWithJson from 'graphql-compose-json';
 import {
   createFindByIdResolver,
   createFindListByPageNumberResolver,
@@ -40,7 +39,7 @@ const restApiResponse = {
   url: 'https://swapi.co/api/people/11/',
 };
 
-const PersonTC = composeWithRest('Person', restApiResponse);
+const PersonTC = composeWithJson('Person', restApiResponse);
 
 createFindByIdResolver(PersonTC, 'people');
 

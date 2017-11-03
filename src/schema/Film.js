@@ -1,6 +1,6 @@
 /* @flow */
 
-import composeWithRest from 'graphql-compose-rest';
+import composeWithJson from 'graphql-compose-json';
 import {
   createFindByIdResolver,
   createFindListByPageNumberResolver,
@@ -73,7 +73,7 @@ const restApiResponse = {
   url: 'https://swapi.co/api/films/1/',
 };
 
-const FilmTC = composeWithRest('Film', restApiResponse);
+const FilmTC = composeWithJson('Film', restApiResponse);
 
 export default FilmTC;
 
