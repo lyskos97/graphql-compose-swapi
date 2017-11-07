@@ -1,7 +1,7 @@
 /* @flow */
 
 import express from 'express';
-import expressGraphQL from 'express-graphql';
+import graphqlHTTP from 'express-graphql';
 import fetch from 'node-fetch';
 import Dataloader from 'dataloader';
 import schema from './schema/Schema';
@@ -20,7 +20,7 @@ async function loadData(url: string) {
 
 app.use(
   '/',
-  expressGraphQL(() => {
+  graphqlHTTP(() => {
     const loader = new Dataloader(keys => Promise.all(keys.map(loadData)));
 
     return {
